@@ -1,4 +1,4 @@
-import ProvedorDeCriptografia from "../../app/usuario/ProvedorDeCriptografica";
+import ProvedorDeCriptografia from "../../core/usuario/ProvedorDeCriptografica";
 
 export default class SenhaComEspaco implements ProvedorDeCriptografia {
     

@@ -1,10 +1,10 @@
-import RegistrarUsuario from '../src/exemplos/app/usuario/RegistrarUsuario'
-import UsuarioEmMemoria from '../src/exemplos/adaptadores/db/UsuarioEmMemoria' 
-import InverterSenha from '../src/exemplos/adaptadores/auth/InverterSenha'
-import SenhaComEspaco from '../src/exemplos/adaptadores/auth/SenhaComEspaco'
-import ColecaoUsuarioDB from '../src/exemplos/adaptadores/db/knex/ColecaoUsuarioDB'
-import CriptoReal from '../src/exemplos/adaptadores/auth/CriptoReal'
-import { async } from 'rxjs'
+import RegistrarUsuario from '../../src/core/usuario/RegistrarUsuario'
+import UsuarioEmMemoria from '../../src/adapters/db/UsuarioEmMemoria' 
+import InverterSenha from '../../src/adapters/auth/InverterSenha'
+import SenhaComEspaco from '../../src/adapters/auth/SenhaComEspaco'
+import ColecaoUsuarioDB from '../../src/adapters/db/knex/ColecaoUsuarioDB'
+import CriptoReal from '../../src/adapters/auth/CriptoReal'
+
 test('Testar senha cript', async () => {
     const colecao = new UsuarioEmMemoria()
     const proverdorCript= new InverterSenha()
@@ -71,8 +71,6 @@ test.skip('Deve registrar um usuario no banco real', async () => {
         "joao@hotmail.com",
         '123456'
     )
-   
-    // console.log(usuario.password)  
 
     expect(usuario).toHaveProperty('id')
     expect(usuario.name).toBe('João')
