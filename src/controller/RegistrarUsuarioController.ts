@@ -3,15 +3,20 @@ import { Express } from "express";
 export default class RegistrarUsuarioController {
     constructor(
         private sevidor: Express,
-        private registrarUsuario: RegistrarUsuario
+        private casoDeUso: RegistrarUsuario
     ){
         this.sevidor.post('/registrar', async (req,res) => {
-          await registrarUsuario.executar(
+            try {
+                await casoDeUso.executar(
                 req.body.name,
                 req.body.email,
                 req.body.password
-            )
+             )
             res.status(201).send()
+            } catch(err: any) {
+                res.status(400).send(err.message)
+            }
+          
         })
     } 
    

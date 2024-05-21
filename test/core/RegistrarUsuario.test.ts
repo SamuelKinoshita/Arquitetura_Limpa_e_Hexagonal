@@ -58,7 +58,7 @@ test('Deve lançar um erro ao cadastrar usuario', async () => {
     await casoDeUso.executar(name,email,passord)
     const exec = async () => await casoDeUso.executar(name,email,passord)
 
-    await expect(exec).rejects.toThrow('Usuario ja existe')
+    await expect(exec).rejects.toThrow('Usuário ja existe')
 })
 
 test.skip('Deve registrar um usuario no banco real', async () => {
